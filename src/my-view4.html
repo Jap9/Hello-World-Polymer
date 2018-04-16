@@ -8,31 +8,30 @@ Code distributed by Google as part of the polymer project is also
 subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
 -->
 
-<head>
-    
-    <link rel="import" href="../bower_components/google-map/google-map.html">
-</head>
+<script src="../bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+<link rel="import" href="../bower_components/google-map/google-map.html">
 
-<body>
-    <h2>sss</h2>
-    <google-map latitude="37.779" longitude="-122.3892" zoom="13" api-key="AIzaSyALPkW489pldeMusNWZI1WNA5FAp-w6UFQ">
-    </google-map>
-</body>
+<dom-module id="my-view4">
+    <template>
+        <style>
+            google-map
+            {
+                position: absolute;
+                top: 0; left: 0; bottom: 0; right: 0;
+            }
+        </style>
 
-<style>
-        body, html {
-            font-family: 'Roboto', Arial, sans-serif;
-            height: 100%;
-            margin: 0;
-          }
-</style>
+        <google-map latitude="37.779" longitude="-122.3892" zoom="13" 
+            api-key="AIzaSyALPkW489pldeMusNWZI1WNA5FAp-w6UFQ" disable-default-ui>
+                    <!--<google-map-marker latitude="37.779" longitude="-122.3892"
+                    title="Go Giants!" draggable="true"></google-map-marker>-->
+        </google-map>
+    </template>
 
-<script>
-    class MyView4 extends Polymer.Element {
-      static get is() { return 'my-view4'; }
-    }
-
-    window.customElements.define(MyView4.is, MyView4);
-</script>
-
+    <script>
+        class MyView4 extends Polymer.Element {
+            static get is() { return 'my-view4'; }
+        }
+        window.customElements.define(MyView4.is, MyView4);
+    </script>
 </dom-module>
